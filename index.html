@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Logo.png" type="image/png">
+    <title>Armazenamento de Biblioteca Livros</title>
+</head>
+
+<body>
+    <h1 class="titulo">Cadastro de Livros</h1>
+    <h3 class="linha"></h3>
+    <img class="logo" src="Logo.png" alt="logo">
+    <div class="lacunas">
+        <input class="livro" id="nomeLivro" placeholder="Nome" type="text">
+        <input id="autorLivro" placeholder="Autor" type="text">
+        <input id="anoLivro" placeholder="Ano" type="number">
+    </div>
+    <button class="botao" onclick="adicionar()">Adicionar Livros</button>
+    <button class="botao1" onclick="mostrarLivros()">Mostrar</button>
+    <div id="aviso" style="display: none;">preencha todos os campos para cadastrar um livro!</div>
+
+    <div class="carrossel" id="carrosselContainer" style="display: none;">
+
+        <div class="carrossel-inner">
+            <button id="anterior">Anterior</button>
+            <img id="carrosselImagem" src="" alt="Imagem do carrossel">
+            <button id="proxima">Próxima</button>
+        </div>
+        <div id="detalhesCarrossel"></div>
+    </div>
+
+   
+
+    <script>
+
+        //carrossel de imagem
+        let imgIndice = 0;
+        const IMAGENS = ['image1.png', 'image2.png', 'image3.png', 'image4.png'];
+        var IMG = document.getElementById('carrosselImagem');
+
+        function carregar() {
+            IMG.src = IMAGENS[imgIndice];
+        }
+
+        function exibirCarrossel(detalhes) {
+            const carrosselContainer = document.getElementById('carrosselContainer');
+            carrosselContainer.style.display = 'block';
+            const detalhesCarrossel = document.getElementById('detalhesCarrossel');
+            detalhesCarrossel.innerHTML = detalhes;
+
+            const prevButton = document.getElementById('anterior');
+            const nextButton = document.getElementById('proxima');
+            
+            prevButton.addEventListener('click', () => {
+                imgIndice = (imgIndice - 1 + IMAGENS.length) % IMAGENS.length;
+                carregar();
+            });
+            
+            nextButton.addEventListener('click', () => {
+                imgIndice = (imgIndice + 1) % IMAGENS.length;
+                carregar();
+            });
+        }
+
+        function adicionar() {
+            let nome = document.getElementById('nomeLivro').value;
+            let autor = document.getElementById('autorLivro').value;
+            let ano = document.getElementById('anoLivro').value;
+
+            if (nome === '' || autor === '' || ano === '') {
+                document.getElementById('aviso').style.display = 'block';
+            } else {
+                const detalhes = `
+                    <p><strong>Nome:</strong> ${nome}<br>
+                    <strong>Autor:</strong> ${autor}<br>
+                    <strong>Ano:</strong> ${ano}</p>
+                `;
+                exibirCarrossel(detalhes);
+                carregar();
+
+                const detalhesDiv = document.getElementById('detalhesLivro');
+                detalhesDiv.innerHTML = `
+                    <h2>Detalhes do Último Livro Cadastrado:</h2>
+                    <p><strong>Nome:</strong> ${nome}</p>
+                    <p><strong>Autor:</strong> ${autor}</p>
+                    <p><strong>Ano:</strong> ${ano}</p>
+                `;
+            }
+        }
+    </script>
+</body>
+
+</html>

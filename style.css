@@ -1,0 +1,178 @@
+@font-face {
+    font-family:  sans-serif;
+    src: url(font/ArchivoBlack-Regular.ttf);
+}
+
+@font-face {
+    font-family: Francois One;
+    src: url(font/FrancoisOne-Regular.ttf);
+}
+
+@font-face {
+    font-family: Arsenal;
+    src: url(font/Arsenal-Bold.ttf);
+}
+@font-face {
+    font-family:  Nunito;
+    src: url(font/Nunito-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(font/Roboto-Black.ttf);
+}
+
+.titulo{
+    font-family: Francois One; 
+   margin-left: 70px;
+    margin-top: 50px;
+    
+   
+}
+
+.titulo, .linha{
+    margin-bottom: -30px;
+}
+.linha{
+    border-bottom: 2px solid peru; /* Uma linha de 2 pixels de largura com cor azul */
+    padding: 10px 0; 
+    box-shadow: black;
+   
+}
+
+.logo{
+    display: flex;
+    width: 90px;
+    height: 100px;
+    margin-left: 1360px;
+   margin-top:  -100px;
+    text-align: right;
+}
+
+body{
+    background-color: rgba(244, 228, 205, 0.725);
+}
+
+
+.lacunas {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#nomeLivro, #autorLivro, #anoLivro {
+    width: 320px;
+    height: 50px;
+    border: 40px;
+    border-radius: 9px;
+    margin-bottom: 40px;
+    font-family: Nunito;
+    text-align: center;
+    margin-right: 30px; /* Adicionar espaço entre os campos */
+    display: inline-block; /* Manter os elementos na mesma linha */
+}
+
+#anoLivro{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.botao{
+    width:320px;
+    height:50px;
+    justify-content: center; 
+    margin-left: 200px;
+    margin-bottom: 40px;
+    background-color: peru;
+    border: 40px;
+    border-radius: 20px;
+    margin-top: 90px;
+    
+}
+.botao1{
+    width:320px;
+    height:50px;
+    justify-content: center; 
+   text-align: center;
+    margin-bottom: 40px;
+    background-color: peru;
+    border: 40px;
+    border-radius: 20px;
+}
+
+.botao, .botao1{
+    margin-left: 250px;
+    font-family:  Nunito;
+
+}
+
+.carrossel{
+    text-align: center;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    margin-top: 70px;
+}
+
+#anterior{
+    width:320px;
+    height:50px;
+    justify-content: center; 
+    margin-left: 200px;
+    margin-bottom: 40px;
+    background-color: peru;
+    border: 40px;
+    border-radius: 20px;
+    margin-top: 90px;
+    
+}
+
+
+#proxima{
+    width:320px;
+    height:50px;
+    justify-content: center; 
+    margin-left: 200px;
+    margin-bottom: 40px;
+    background-color: peru;
+    border: 40px;
+    border-radius: 20px;
+    margin-top: 90px;
+}
+
+#anterior, #proxima{
+    width: 320px;
+    height: 50px;
+    justify-content: center;
+    background-color: peru;
+    border: 40px;
+    border-radius: 20px;
+    font-family: Nunito;
+    margin-right: 250px; /* Adicionar espaço entre os botões */
+    margin-top: 100px;
+    margin-left: 50px;
+    display: inline-block; 
+    vertical-align: middle;
+}
+.botoes{
+ left: 10px;
+ font-family:  Nunito;
+}
+
+
+#aviso{
+    margin-top: 30px;
+    text-align: center;
+   color: red;
+   font-family: Arsenal;
+}
+#detalhesCarrossel{
+    font-family: Roboto
+}
+.carrosselImagem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
